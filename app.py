@@ -1,10 +1,10 @@
-from flask import Flask, render_template, request, session, redirect, url_for, jsonify, json, g, send_from_directory
+from flask import Flask, render_template, request, session, redirect, url_for, jsonify, send_from_directory
 from flask_cors import CORS
 import sqlite3 as sql
-import torch
+import torch 
 
-app = Flask(__name__, static_folder="build", static_url_path="") 
-CORS(app)
+app = Flask(__name__, static_folder="build", static_url_path="")
+CORS(app, origins=["http://localhost:3000"]) 
 
 @app.route('/')
 def index():
